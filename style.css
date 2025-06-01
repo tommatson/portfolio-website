@@ -1,0 +1,159 @@
+#openings{
+    display: flex;
+    flex-direction: column;
+    /* Justify content is used to control horizontal alignment in the flexbox */
+    justify-content: center;
+    /* Align items aligns vertically */
+    align-items: center;
+    text-align: center;
+}
+
+.links a{
+    color: #BF5700;
+    font-size: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#projects{
+    display: flex;
+    flex-direction: column;
+    /* Justify content is used to control horizontal alignment in the flexbox */
+    justify-content: center;
+    /* Align items aligns vertically */
+    align-items: center;
+    
+}
+
+#projects h1{
+    margin: 0;
+}
+
+.underline {
+    width: 15rem;
+    height: 0.2rem;
+    background-color: #BF5700;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+
+.project {
+    width: 90%; /* full width on mobile */
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+
+
+
+.projectInfo span {
+  display: inline-block;
+  background: #eee;
+  color: #333;
+  padding: 0.3rem 0.5rem;
+  margin: 0.2rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+#experiences{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    /* Justify content is used to control horizontal alignment in the flexbox */
+    justify-content: center;
+    /* Align items aligns vertically */
+    align-items: center;
+}
+#experiences h1{
+    margin: 0;
+}
+
+.experienceLeft{
+    position: relative;
+    width: calc(90% - 25px); /* full width on mobile minus logo size */
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-left: 25px;
+
+    
+}
+
+.experienceRight{
+    position: relative;
+    width: calc(90% - 25px); /* full width on mobile minus logo size */
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-right: 25px;
+
+}
+
+#experiences h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.experienceLeft .experienceLogo{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #BF5700;
+    border: 3px solid #fff
+}
+
+.experienceRight .experienceLogo {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #BF5700;
+    border: 3px solid #fff
+}
+
+.experienceLeft .experienceInfo {
+    padding-left: 25px;
+}
+.experienceRight .experienceInfo {
+    padding-right: 25px;
+}
+
+@media (min-width: 1111px) {
+  .project {
+    width: 1000px; /* Max width when device is not mobile */
+  }
+  .experienceLeft, .experienceRight {
+    width: 975px;
+  }
+}
+
+
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: #EAEAEA;
+
+  
+}
+body{
+    color: #333333;
+}
