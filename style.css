@@ -8,11 +8,17 @@
     text-align: center;
 }
 
+
+
 .links a{
     color: #BF5700;
     font-size: 3rem;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+.aboutMe h1{
+    font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 #projects{
@@ -27,6 +33,7 @@
 
 #projects h1{
     margin: 0;
+    font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 .underline {
@@ -44,10 +51,20 @@
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
     
 }
 
 
+.project:hover {
+  transform: translateY(-5px); /* Slightly lift the tile */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Enhance shadow */
+}
+
+.projectInfo h2{ 
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
 
 .projectInfo span {
   display: inline-block;
@@ -68,6 +85,10 @@
     /* Align items aligns vertically */
     align-items: center;
 }
+
+#experiences h1 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
 #experiences h1{
     margin: 0;
 }
@@ -80,6 +101,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-left: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     
 }
@@ -92,12 +114,27 @@
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-right: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
+}
+
+
+.experienceLeft:hover{
+    transform: translateY(-5px); /* Slightly lift the tile */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Enhance shadow */
+}
+
+.experienceRight:hover {
+  transform: translateY(-5px); /* Slightly lift the tile */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Enhance shadow */
 }
 
 #experiences h3 {
     margin-top: 3rem;
     margin-bottom: 1rem;
+}
+.experienceInfo h2{
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
 }
 
 .experienceLeft .experienceLogo{
@@ -156,4 +193,47 @@
 }
 body{
     color: #333333;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Noto Serif', serif;
+}
+
+
+#nameTitle {
+  display: inline-block;
+  font-family: monospace;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #333;
+}
+
+#nameTitle span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 0.6ch solid black; /* The blocky cursor */
+  
+  /* --- KEY CHANGES HERE --- */
+  animation: 
+    /* 1. Typing animation updated for 29 characters */
+    typing 2.5s steps(29, end),
+
+    /* 2. Blink animation now runs 5 times and stops */
+    blink-caret 0.75s step-end 5;
+  
+  /* This ensures the final state is a hidden cursor */
+  animation-fill-mode: forwards;
+  width: 0;
+}
+
+/* Typing animation updated for 29 characters */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 29ch; }
+}
+
+/* The cursor blinking effect (unchanged) */
+/* Because it ends on "transparent", the cursor will be hidden when the animation finishes */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
 }
