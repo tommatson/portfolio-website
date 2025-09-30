@@ -212,7 +212,7 @@ This project demonstrates my ability to deliver a full-stack product that is tec
         { id: 'edu3', title: 'Steyning', company: 'GCSE', period: 'Graduated 2022', description: 'Successfully completed GCSE studies, providing a strong foundation for A-Levels. I acheived an excellent grade average of 8.5, whilst winning awards such as the best Computer Science student, and best Physics student.' }
     ],
     trash: [
-        { id: 'pong1', title: 'Pong.exe' }
+        { id: 'pong1', title: 'Pong' }
     ],
     about: { name: 'Tom Matson', title: 'Computer Science Student', bio: "I am a student at the University of Bristol, pursuing a Bachelor's degree in Computer Science. I am passionate and driven, with a particular interest in artificial intelligence and quantitative development. I am especially interested in applying my skills to solve complex challenges in production-ready environments. Feel free to check out my GitHub to see some of the projects I’ve worked on so far!", contact: 'Please contact me via LinkedIn for any questions or queries, or email me at tomomatson@icloud.com' }
   };
