@@ -1,0 +1,423 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.screenOverlay {
+  position: absolute;
+  background-color: #000000;
+  pointer-events: auto;
+  animation: fadeIn 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.safeArea {
+  position: absolute;
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.macOS {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Chicago', 'Geneva', 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  image-rendering: pixelated;
+}
+
+/* Menu Bar */
+.menuBar {
+  background-color: #ffffff;
+  border-bottom: 2px solid #000000;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  user-select: none;
+  flex-shrink: 0;
+  height: 24px;
+}
+
+.menuItem {
+  cursor: pointer;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.menuItem:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.menuItem a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menuItem.nonClickable:hover {
+  background-color: transparent;
+  color: inherit;
+  cursor: default;
+}
+
+.appleIcon {
+  font-size: 14px;
+}
+
+.menuBarRight {
+  margin-left: auto;
+}
+
+.menuButton {
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 2px 12px;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+  color: #000000; 
+}
+
+.menuButton:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.menuButton:active {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+/* Desktop */
+.desktop {
+  flex: 1;
+  background-image: 
+    repeating-linear-gradient(0deg, #cccccc, #cccccc 1px, #ffffff 1px, #ffffff 2px),
+    repeating-linear-gradient(90deg, #cccccc, #cccccc 1px, #ffffff 1px, #ffffff 2px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Desktop Icons */
+.desktopIcons {
+  position: absolute;
+  top: 0;
+  right: 1%; /* Responsive spacing from edge */
+  bottom: 0;
+  width: clamp(80px, 12vw, 140px); /* Responsive width that scales with viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* This is the key: auto-spaces icons to fit height */
+  padding: 3vh 0; /* Responsive vertical padding */
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 100%; /* Icons fill the column width */
+  user-select: none;
+}
+
+.icon:hover .iconLabel {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.iconImage {
+  font-size: 7vh; /* Scales between 32px and 72px based on viewport */
+  margin-bottom: clamp(4px, 1vh, 8px); /* Responsive margin */
+  filter: grayscale(1) contrast(2);
+}
+
+.iconLabel {
+  font-size: clamp(9px, 1.2vmin, 12px); /* Scales between 9px and 12px */
+  text-align: center;
+  background-color: #ffffff;
+  padding: 2px 6px;
+  border: 1px solid #000000;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent label wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Windows */
+.window {
+  position: absolute;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  min-width: 450px;
+  min-height: 300px;
+  max-width: 90%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  resize: both;
+  overflow: hidden;
+}
+
+.titleBar {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: move;
+  user-select: none;
+  border-bottom: 2px solid #000000;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.titleBarButtons {
+  display: flex;
+  gap: 4px;
+}
+
+.closeButton {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: inherit;
+  color: #000000;
+}
+
+.closeButton:hover {
+  background-color: #cccccc;
+}
+
+.titleBarText {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.windowContent {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  background-color: #ffffff;
+  font-size: 12px;
+}
+
+/* Consolidated Folder View */
+.folderView {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.itemView {
+  padding-bottom: 16px;
+  border-bottom: 2px dashed #cccccc;
+}
+
+.itemView:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.itemView h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  font-size: 14px;
+  display: inline-flex;
+}
+
+.fileItem:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.fileIcon {
+  font-size: 18px;
+}
+
+.fileName {
+  font-weight: bold;
+}
+
+.company {
+  margin: 8px 0;
+  font-weight: bold;
+}
+.description {
+  margin: 12px 0;
+  text-align: justify;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.tech {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #000000;
+  font-size: 11px;
+}
+
+/* About View Styles */
+.aboutView {
+  line-height: 1.6;
+}
+.aboutView h2 {
+  margin: 0 0 5px 0;
+  font-size: 17px;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+}
+.aboutView h3 { 
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: normal; 
+  font-style: italic; 
+}
+.bio {
+  margin: 12px 0;
+  text-align: justify;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.aboutSection {
+  margin: 12px 0;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border: 2px solid #000000;
+}
+.aboutSection strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.aboutSection p {
+  margin: 0;
+  font-size: 11px;
+}
+
+/* --- Pong Game Styles --- */
+.pongView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+.pongInstructions {
+  margin: 0 0 10px 0;
+  font-size: 10px;
+  font-weight: bold;
+}
+.pongContainer {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background-color: #fff;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+.pongNet {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  border-left: 2px dashed #000;
+  transform: translateX(-1px);
+}
+.pongPaddle {
+  position: absolute;
+  width: 10px;
+  height: 80px;
+  background-color: #000;
+  top: 0;
+  left: 0;
+}
+.pongPlayer { left: 0; }
+.pongAi { left: calc(100% - 10px); }
+.pongBall {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  top: 0;
+  left: 0;
+}
+.pongScore {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0.5;
+}
+
+/* Scrollbar Styling */
+.windowContent::-webkit-scrollbar {
+  width: 16px;
+}
+.windowContent::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border-left: 1px solid #000000;
+}
+.windowContent::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #ffffff;
+}
+.windowContent::-webkit-scrollbar-thumb:hover {
+  background-color: #333333;
+}
