@@ -304,6 +304,22 @@
   font-size: 11px;
 }
 
+.link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.link:hover {
+  background-color: #333333;
+}
+
 /* About View Styles */
 .aboutView {
   line-height: 1.6;
