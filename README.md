@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interactive 3D Portfolio
+
+This is a unique and interactive portfolio website built with Next.js and Three.js. It presents a creative desktop-like interface within a 3D-rendered scene of a Mac computer model, offering a dynamic and engaging user experience.
+
+## Features
+
+- **3D Interactive Model**: The portfolio is presented within a 3D model of a Mac, creating a visually engaging experience.
+- **Zoom-in Interaction**: On scroll, the view zooms into the Mac's screen, revealing the main portfolio content.
+- **Desktop-like UI**: The portfolio is designed as a desktop interface with draggable windows for projects, experience, education, and an "about me" section.
+- **Embedded Pong Game**: A fully playable Pong game is included as a fun, interactive element within the UI.
+- **Rich Content Display**: The portfolio showcases detailed information about projects, work experience, and education in a structured and easily accessible format.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
+
+- Node.js and npm (or yarn/pnpm/bun) installed on your machine.
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username/your_repository.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run the development server
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Next.js](https://nextjs.org/) - React framework for production
+- [Three.js](https://threejs.org/) - 3D graphics library
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) - React renderer for Three.js
+- [Lucide React](https://lucide.dev/guide/packages/lucide-react) - Icon library
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/page.js`: The main entry point of the application, handling the 3D scene and the zoom-in interaction.
+- `app/Scene.jsx`: Contains the Three.js scene, including the 3D model and lighting.
+- `app/ZoomedUI.jsx`: Renders the desktop-like user interface with draggable windows and portfolio content.
+- `app/Model.jsx`: The 3D model component for the Mac.
+- `public/`: Contains static assets, including the 3D model (`mac-model.glb`).
