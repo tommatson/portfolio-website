@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import styles from './ZoomedUI.module.css';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, ChevronDown, FileText, Mail } from 'lucide-react';
 
 // --- Pong Game Component (Self-Contained) ---
 const PongGame = () => {
@@ -302,6 +302,8 @@ This project demonstrates my ability to deliver a full-stack product that is tec
                 <div className={`${styles.menuItem} ${styles.nonClickable}`}><span className={styles.appleIcon}>tommatson</span></div>
                 <div className={styles.menuItem}><a href="https://github.com/tommatson" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={16} /></a></div>
                 <div className={styles.menuItem}><a href="https://www.linkedin.com/in/tom-matson-4739b0279/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a></div>
+                <div className={styles.menuItem}><a href="/cv.pdf" download="Tom_Matson_CV.pdf" aria-label="Download CV"><FileText size={16} /></a></div>
+                <div className={styles.menuItem}><a href="mailto:tomomatson@icloud.com" aria-label="Email Me"><Mail size={16} /></a></div>
                 <div className={styles.menuBarRight}><button onClick={onBack} className={styles.menuButton}>Exit</button></div>
               </div>
 

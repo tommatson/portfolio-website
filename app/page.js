@@ -5,7 +5,8 @@ import { Canvas } from '@react-three/fiber';
 import { Scene } from './Scene';
 import { ZoomedUI } from './ZoomedUI';
 import styles from './page.module.css';
-import { Github, Linkedin, ChevronDown } from 'lucide-react';
+// Import the new icons
+import { Github, Linkedin, ChevronDown, FileText, Mail } from 'lucide-react';
 
 export default function Home() {
   const sceneRef = useRef();
@@ -79,6 +80,19 @@ export default function Home() {
             aria-label="LinkedIn"
           >
             <Linkedin size={32} />
+          </a>
+          <a
+            href="/cv.pdf"
+            download="Tom_Matson_CV.pdf" 
+            aria-label="Download CV"
+          >
+            <FileText size={32} />
+          </a>
+          <a
+            href="mailto:tomomatson@icloud.com"
+            aria-label="Email Me"
+          >
+            <Mail size={32} />
           </a>
         </div>
         <div className={styles.scrollIndicator}>
